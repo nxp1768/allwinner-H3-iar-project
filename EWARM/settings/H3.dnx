@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<settings>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <StLinkDriver>
+        <WatchCond>_ 0</WatchCond>
+        <Watch0>_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0</Watch0>
+        <Watch1>_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0</Watch1>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </StLinkDriver>
+    <DebugChecksum>
+        <Checksum>1224811742</Checksum>
+    </DebugChecksum>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Disassembly>
+        <InstrCount>0</InstrCount>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
+    <JLinkDriver>
+        <WatchCond>_ 0</WatchCond>
+        <Watch0>_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0</Watch0>
+        <Watch1>_ 0 "" 0 "" 0 "" 0 "" 0 0 0 0</Watch1>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </JLinkDriver>
+    <CodeCoverage>
+        <Enabled>_ 0</Enabled>
+    </CodeCoverage>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>1</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
+    <PlDriver>
+        <FirstRun>0</FirstRun>
+        <MemConfigValue>F:\H3_wk\H3\H3_app\EWARM\h3.ddf</MemConfigValue>
+    </PlDriver>
+    <Jet>
+        <PrevWtdReset>Hardware</PrevWtdReset>
+        <OnlineReset>Software</OnlineReset>
+        <JetConnSerialNo>01387</JetConnSerialNo>
+        <JetConnFoundProbes />
+        <DisableInterrupts>0</DisableInterrupts>
+        <LeaveRunning>0</LeaveRunning>
+        <MultiCoreRunAll>0</MultiCoreRunAll>
+    </Jet>
+    <ArmDriver>
+        <EnableCache>1</EnableCache>
+    </ArmDriver>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+        <LogEnabledCore1>0</LogEnabledCore1>
+        <GraphEnabledCore1>0</GraphEnabledCore1>
+        <ShowTimeLogCore1>1</ShowTimeLogCore1>
+        <SumEnabledCore1>0</SumEnabledCore1>
+        <ShowTimeSumCore1>1</ShowTimeSumCore1>
+        <SumSortOrderCore1>0</SumSortOrderCore1>
+        <LogEnabledCore2>0</LogEnabledCore2>
+        <GraphEnabledCore2>0</GraphEnabledCore2>
+        <ShowTimeLogCore2>1</ShowTimeLogCore2>
+        <SumEnabledCore2>0</SumEnabledCore2>
+        <ShowTimeSumCore2>1</ShowTimeSumCore2>
+        <SumSortOrderCore2>0</SumSortOrderCore2>
+        <LogEnabledCore3>0</LogEnabledCore3>
+        <GraphEnabledCore3>0</GraphEnabledCore3>
+        <ShowTimeLogCore3>1</ShowTimeLogCore3>
+        <SumEnabledCore3>0</SumEnabledCore3>
+        <ShowTimeSumCore3>1</ShowTimeSumCore3>
+        <SumSortOrderCore3>0</SumSortOrderCore3>
+    </InterruptLog>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <LogEnabledCore1>0</LogEnabledCore1>
+        <GraphEnabledCore1>0</GraphEnabledCore1>
+        <ShowTimeLogCore1>1</ShowTimeLogCore1>
+        <SumEnabledCore1>0</SumEnabledCore1>
+        <ShowTimeSumCore1>1</ShowTimeSumCore1>
+        <LogEnabledCore2>0</LogEnabledCore2>
+        <GraphEnabledCore2>0</GraphEnabledCore2>
+        <ShowTimeLogCore2>1</ShowTimeLogCore2>
+        <SumEnabledCore2>0</SumEnabledCore2>
+        <ShowTimeSumCore2>1</ShowTimeSumCore2>
+        <LogEnabledCore3>0</LogEnabledCore3>
+        <GraphEnabledCore3>0</GraphEnabledCore3>
+        <ShowTimeLogCore3>1</ShowTimeLogCore3>
+        <SumEnabledCore3>0</SumEnabledCore3>
+        <ShowTimeSumCore3>1</ShowTimeSumCore3>
+    </DataLog>
+    <Interrupts>
+        <Enabled>1</Enabled>
+    </Interrupts>
+    <MemConfig>
+        <Base>1</Base>
+        <Manual>0</Manual>
+        <Ddf>1</Ddf>
+        <TypeViol>0</TypeViol>
+        <Stop>1</Stop>
+    </MemConfig>
+    <Simulator>
+        <Freq>10000000</Freq>
+        <FreqHi>0</FreqHi>
+        <MultiCoreRunAll>1</MultiCoreRunAll>
+    </Simulator>
+    <SWOManager>
+        <SamplingDivider>8192</SamplingDivider>
+        <OverrideClock>0</OverrideClock>
+        <CpuClock>1600416118</CpuClock>
+        <SwoClock>1714709297</SwoClock>
+        <DataLogMode>0</DataLogMode>
+        <ItmPortsEnabled>63</ItmPortsEnabled>
+        <ItmTermIOPorts>1</ItmTermIOPorts>
+        <ItmLogPorts>0</ItmLogPorts>
+        <ItmLogFile>$PROJ_DIR$\ITM.log</ItmLogFile>
+        <PowerForcePC>1</PowerForcePC>
+        <PowerConnectPC>1</PowerConnectPC>
+    </SWOManager>
+    <struct_types>
+        <Fmt0>GP_EINT-PX_EINT_STATUS_REG	4	0</Fmt0>
+        <Fmt1>struct sunxi_dma_source_t-channal	4	0</Fmt1>
+        <Fmt2>sunxi_dma_channal_set-FDESC_ADDR	4	0</Fmt2>
+        <Fmt3>sunxi_dma_channal_set-config	4	0</Fmt3>
+        <Fmt4>sunxi_dma_channal_set-cur_dst_addr	4	0</Fmt4>
+        <Fmt5>sunxi_dma_channal_set-cur_src_addr	4	0</Fmt5>
+        <Fmt6>sunxi_dma_channal_set-enable	4	0</Fmt6>
+        <Fmt7>sunxi_dma_channal_set-left_bytes	4	0</Fmt7>
+        <Fmt8>sunxi_dma_channal_set-pause	4	0</Fmt8>
+        <Fmt9>sunxi_dma_channal_set-start_addr	4	0</Fmt9>
+        <Fmt10>sunxi_dma_int_set-irq_en0	4	0</Fmt10>
+        <Fmt11>sunxi_dma_int_set-irq_en1	4	0</Fmt11>
+        <Fmt12>sunxi_dma_int_set-irq_pending0	4	0</Fmt12>
+        <Fmt13>sunxi_dma_int_set-irq_pending1	4	0</Fmt13>
+        <Fmt14>sunxi_dma_int_set-status	4	0</Fmt14>
+        <Fmt15>sunxi_dma_source-config	4	0</Fmt15>
+        <Fmt16>sunxi_dma_start_t-commit_para	4	0</Fmt16>
+        <Fmt17>sunxi_dma_start_t-config	4	0</Fmt17>
+        <Fmt18>sunxi_dma_start_t-dest_addr	4	0</Fmt18>
+        <Fmt19>sunxi_dma_start_t-link	4	0</Fmt19>
+        <Fmt20>sunxi_dma_start_t-source_addr	4	0</Fmt20>
+    </struct_types>
+    <array_types>
+        <Fmt0>u32[16]	4	0</Fmt0>
+        <Fmt1>u8[3872]	3	0</Fmt1>
+    </array_types>
+    <watch_formats>
+        <Fmt0>{W}1:PORTA	4	0</Fmt0>
+        <Fmt1>{W}1:PORTC	4	0</Fmt1>
+        <Fmt2>{W}1:devic_ctl_reg	4	0</Fmt2>
+        <Fmt3>{W}1:dma_int_S	4	0</Fmt3>
+        <Fmt4>{W}1:ii	4	0</Fmt4>
+        <Fmt5>{W}1:serial_ctrl_base	4	0</Fmt5>
+        <Fmt6>{W}1:temp	4	0</Fmt6>
+    </watch_formats>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
+    <ETMTraceWindow>
+        <PortWidth>4</PortWidth>
+        <PortMode>0</PortMode>
+        <CaptureDataValues>0</CaptureDataValues>
+        <CaptureDataAddresses>0</CaptureDataAddresses>
+        <CaptureDataRange>0</CaptureDataRange>
+        <DataFirst>0</DataFirst>
+        <DataLast>4294967295</DataLast>
+        <StopWhen>0</StopWhen>
+        <StallCPU>0</StallCPU>
+        <NoPCCapture>0</NoPCCapture>
+    </ETMTraceWindow>
+    <Trace2>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+    </Trace2>
+    <SWOTraceWindow>
+        <ForcedPcSampling>0</ForcedPcSampling>
+        <ForcedInterruptLogs>0</ForcedInterruptLogs>
+        <ForcedItmLogs>0</ForcedItmLogs>
+        <EventCPI>0</EventCPI>
+        <EventEXC>0</EventEXC>
+        <EventFOLD>0</EventFOLD>
+        <EventLSU>0</EventLSU>
+        <EventSLEEP>0</EventSLEEP>
+    </SWOTraceWindow>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
+    <Aliases>
+        <A0>_ "F:\H3_wk\H3\H333\Src\main.c" ""</A0>
+        <A1>_ "F:\H3_wk\H3\H3\Src\main.c" ""</A1>
+        <Count>2</Count>
+        <SuppressDialog>1</SuppressDialog>
+    </Aliases>
+</settings>

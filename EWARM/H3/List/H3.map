@@ -1,0 +1,1076 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  28/Aug/2018  11:16:03
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  F:\H3_wk\H3\H3_git\EWARM\H3\Exe\H3.out
+#    Map file     =  F:\H3_wk\H3\H3_git\EWARM\H3\List\H3.map
+#    Command line =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW8CAF.tmp
+#        (F:\H3_wk\H3\H3_git\EWARM\H3\Obj\cache_cp15.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\cache_v7.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\ccmu.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\clock.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\cp15.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\gic.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\gpio.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\interrupts.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\main.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\mmu.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\spi_hal.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\startup_H3.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\sunxi_dma.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\timer.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\uart.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usb_base_80.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usb_dma_control.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usb_fastboot.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usbc.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usbc_dev.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usbc_dma.o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Obj\usbc_resource.o --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --no_out_extension -o
+#        F:\H3_wk\H3\H3_git\EWARM\H3\Exe\H3.out --map
+#        F:\H3_wk\H3\H3_git\EWARM\H3\List\H3.map --config
+#        F:\H3_wk\H3\H3_git\EWARM\666.icf --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The advanced heap was selected because the application calls memory
+allocation functions outside of system library functions, and there
+are calls to deallocation functions in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x4000'0020 { ro section .intvec };
+"P1":  place in [from 0x4000'0020 to 0x4'0000] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block SVC_STACK with size = 256, alignment = 8 { };
+define block IRQ_STACK with size = 256, alignment = 8 { };
+define block FIQ_STACK with size = 256, alignment = 8 { };
+define block UND_STACK with size = 256, alignment = 8 { };
+define block ABT_STACK with size = 256, alignment = 8 { };
+define block MON_STACK with size = 0M, alignment = 8 { };
+define block HYP_STACK with size = 0M, alignment = 8 { };
+define block HEAP with size = 32K, alignment = 8 { };
+"P2":  place in [from 0x4004'0300 to 0x4'0000] {
+          rw, block CSTACK, block SVC_STACK, block IRQ_STACK, block FIQ_STACK,
+          block UND_STACK, block ABT_STACK, block MON_STACK, block HYP_STACK,
+          block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address     Size  Object
+  -------            ----         -------     ----  ------
+Absolute sections, part 1 of 4:                0xc
+  .noinit            uninit    0x1f0'1c40      0xc  gpio.o [1]
+                             - 0x1f0'1c4c      0xc
+
+Absolute sections, part 2 of 4:                0xc
+  .noinit            uninit    0x1f0'1c80      0xc  gpio.o [1]
+                             - 0x1f0'1c8c      0xc
+
+Absolute sections, part 3 of 4:                0xc
+  .noinit            uninit    0x1f0'1cc0      0xc  gpio.o [1]
+                             - 0x1f0'1ccc      0xc
+
+Absolute sections, part 4 of 4:                0xc
+  .noinit            uninit    0x1f0'1d00      0xc  gpio.o [1]
+                             - 0x1f0'1d0c      0xc
+
+"A0":                                         0x3c
+  .intvec            ro code  0x4000'0020     0x3c  startup_H3.o [1]
+                            - 0x4000'005c     0x3c
+
+"P1":                                       0x7fa2
+  .text              ro code  0x4000'005c   0x1514  dlmalloc.o [2]
+  .text              ro code  0x4000'1570      0x6  abort.o [2]
+  .text              ro code  0x4000'1576     0x30  xgetmemchunk.o [2]
+  .text              ro code  0x4000'15a6     0x14  exit.o [5]
+  .text              ro code  0x4000'15ba   0x1006  xprintffull.o [2]
+  .text              ro code  0x4000'25c0     0x88  xlocale_c.o [2]
+  .text              ro code  0x4000'2648     0x20  strchr.o [4]
+  .text              ro code  0x4000'2668     0x2e  xfail_s.o [2]
+  .text              ro code  0x4000'2696     0x7a  lz77_init_single.o [4]
+  .text              ro code  0x4000'2710     0x54  strlen.o [4]
+  .text              ro code  0x4000'2764     0x94  memchr.o [4]
+  .text              ro code  0x4000'27f8      0xa  xmbcurmax.o [2]
+  .text              ro code  0x4000'2802     0x3a  zero_init3.o [4]
+  .text              ro code  0x4000'283c     0xd4  ABImemcpy.o [4]
+  .text              ro code  0x4000'2910    0x130  I64DivMod.o [4]
+  .text              ro code  0x4000'2a40     0x12  DblMul.o [3]
+  .text              ro code  0x4000'2a52     0x1e  xencoding_8859_1.o [2]
+  .text              ro code  0x4000'2a70     0x70  frexp.o [3]
+  .text              ro code  0x4000'2ae0     0x2e  DblCmpLe.o [3]
+  .rodata            const    0x4000'2b0e      0x2  xprintffull.o [2]
+  .text              ro code  0x4000'2b10     0x2e  DblCmpGe.o [3]
+  .rodata            const    0x4000'2b3e      0x2  xlocale_c.o [2]
+  .text              ro code  0x4000'2b40    0x104  ldexp.o [3]
+  .text              ro code  0x4000'2c44      0xe  DblToS32.o [3]
+  .text              ro code  0x4000'2c52      0xe  S32ToDbl.o [3]
+  .text              ro code  0x4000'2c60     0x12  DblSub.o [3]
+  .text              ro code  0x4000'2c72     0x12  DblDiv.o [3]
+  .text              ro code  0x4000'2c84      0xe  DblToU32.o [3]
+  .text              ro code  0x4000'2c92      0xe  U32ToDbl.o [3]
+  .text              ro code  0x4000'2ca0    0x1a8  I32DivMod.o [4]
+  .text              ro code  0x4000'2e48      0x4  I64DivZer.o [4]
+  .text              ro code  0x4000'2e4c      0x4  IntDivZer.o [4]
+  .text              ro code  0x4000'2e50    0xf34  usb_base_80.o [1]
+  .text              ro code  0x4000'3d84    0x68c  usbc.o [1]
+  .text              ro code  0x4000'4410    0x114  usb_dma_control.o [1]
+  .text              ro code  0x4000'4524     0x2a  printf.o [2]
+  .rodata            const    0x4000'454e      0x2  xlocale_c.o [2]
+  .text              ro code  0x4000'4550    0x83e  usbc_dev.o [1]
+  .rodata            const    0x4000'4d8e      0x1  xlocale_c.o [2]
+  .text              ro code  0x4000'4d90    0x364  gic.o [1]
+  .text              ro code  0x4000'50f4     0x74  ABImemset.o [4]
+  .text              ro code  0x4000'5168     0xb8  usbc_resource.o [1]
+  .text              ro code  0x4000'5220    0x208  timer.o [1]
+  .text              ro code  0x4000'5428      0x4  heaptramp0.o [2]
+  .text              ro code  0x4000'542c     0xe0  usbc_dma.o [1]
+  .text              ro code  0x4000'550c     0x2a  interrupts.o [1]
+  .text              ro code  0x4000'5538    0x52c  spi_hal.o [1]
+  .text              ro code  0x4000'5a64    0x320  sunxi_dma.o [1]
+  .text              ro code  0x4000'5d84    0x26a  cache_v7.o [1]
+  .text              ro code  0x4000'5ff0    0x4f0  cp15.o [1]
+  .text              ro code  0x4000'64e0    0x4ec  usb_fastboot.o [1]
+  .text              ro code  0x4000'69cc    0x2b0  uart.o [1]
+  .text              ro code  0x4000'6c7c    0x210  gpio.o [1]
+  .text              ro code  0x4000'6e8c     0xf4  clock.o [1]
+  .text              ro code  0x4000'6f80     0xd4  startup_H3.o [1]
+  .text              ro code  0x4000'7054     0x28  fpinit.o [3]
+  .text              ro code  0x4000'707c     0x30  cmain.o [4]
+  .text              ro code  0x4000'70ac      0x4  low_level_init.o [2]
+  .text              ro code  0x4000'70b0     0x30  data_init.o [4]
+  .text              ro code  0x4000'70e0     0x54  main.o [1]
+  Veneer             ro code  0x4000'7134      0x8  - Linker created -
+  .text              ro code  0x4000'713c      0x4  exit.o [2]
+  .text              ro code  0x4000'7140     0x74  cache_cp15.o [1]
+  .text              ro code  0x4000'71b4     0xb0  mmu.o [1]
+  .text              ro code  0x4000'7264     0x10  cexit.o [4]
+  .rodata            const    0x4000'7274     0x68  xprintffull.o [2]
+  .rodata            const    0x4000'72dc     0x48  gic.o [1]
+  .rodata            const    0x4000'7324     0x44  usb_fastboot.o [1]
+  .rodata            const    0x4000'7368     0x3c  sunxi_dma.o [1]
+  .rodata            const    0x4000'73a4     0x3c  usb_base_80.o [1]
+  .rodata            const    0x4000'73e0     0x3c  usb_base_80.o [1]
+  .rodata            const    0x4000'741c     0x3c  usb_base_80.o [1]
+  .rodata            const    0x4000'7458     0x34  cache_v7.o [1]
+  .rodata            const    0x4000'748c     0x34  cache_v7.o [1]
+  .rodata            const    0x4000'74c0     0x34  usb_base_80.o [1]
+  .rodata            const    0x4000'74f4     0x34  usb_base_80.o [1]
+  .rodata            const    0x4000'7528     0x34  usb_fastboot.o [1]
+  CODE               ro code  0x4000'7560     0x30  startup_H3.o [1]
+  .rodata            const    0x4000'7590     0x2c  timer.o [1]
+  .rodata            const    0x4000'75bc     0x2c  usb_base_80.o [1]
+  .rodata            const    0x4000'75e8     0x28  spi_hal.o [1]
+  .rodata            const    0x4000'7610     0x28  timer.o [1]
+  .rodata            const    0x4000'7638     0x28  usb_base_80.o [1]
+  .rodata            const    0x4000'7660     0x28  usb_base_80.o [1]
+  .rodata            const    0x4000'7688     0x24  gic.o [1]
+  .rodata            const    0x4000'76ac     0x24  gic.o [1]
+  .rodata            const    0x4000'76d0     0x24  spi_hal.o [1]
+  .rodata            const    0x4000'76f4     0x24  spi_hal.o [1]
+  .rodata            const    0x4000'7718     0x24  spi_hal.o [1]
+  .rodata            const    0x4000'773c     0x24  sunxi_dma.o [1]
+  .rodata            const    0x4000'7760     0x24  usb_base_80.o [1]
+  .rodata            const    0x4000'7784     0x24  usb_base_80.o [1]
+  .rodata            const    0x4000'77a8     0x24  usb_base_80.o [1]
+  .rodata            const    0x4000'77cc     0x24  usb_base_80.o [1]
+  .rodata            const    0x4000'77f0     0x24  usb_fastboot.o [1]
+  .iar.init_table    const    0x4000'7814     0x20  - Linker created -
+  .rodata            const    0x4000'7834     0x20  spi_hal.o [1]
+  .rodata            const    0x4000'7854     0x20  usb_base_80.o [1]
+  .rodata            const    0x4000'7874     0x20  usb_fastboot.o [1]
+  .rodata            const    0x4000'7894     0x20  usb_fastboot.o [1]
+  .rodata            const    0x4000'78b4     0x20  xfail_s.o [2]
+  .rodata            const    0x4000'78d4     0x1c  spi_hal.o [1]
+  .rodata            const    0x4000'78f0     0x1c  spi_hal.o [1]
+  .rodata            const    0x4000'790c     0x1c  usb_base_80.o [1]
+  .rodata            const    0x4000'7928     0x1c  usb_base_80.o [1]
+  .rodata            const    0x4000'7944     0x1c  usb_base_80.o [1]
+  .rodata            const    0x4000'7960     0x1c  usb_base_80.o [1]
+  .rodata            const    0x4000'797c     0x1c  usb_base_80.o [1]
+  .rodata            const    0x4000'7998     0x1c  usb_dma_control.o [1]
+  .rodata            const    0x4000'79b4     0x1c  usb_fastboot.o [1]
+  .rodata            const    0x4000'79d0     0x1c  usb_fastboot.o [1]
+  .rodata            const    0x4000'79ec     0x18  cache_v7.o [1]
+  .rodata            const    0x4000'7a04     0x18  gic.o [1]
+  .rodata            const    0x4000'7a1c     0x18  gic.o [1]
+  .rodata            const    0x4000'7a34     0x18  spi_hal.o [1]
+  .rodata            const    0x4000'7a4c     0x18  spi_hal.o [1]
+  .rodata            const    0x4000'7a64     0x18  spi_hal.o [1]
+  .rodata            const    0x4000'7a7c     0x18  uart.o [1]
+  .rodata            const    0x4000'7a94     0x18  usb_base_80.o [1]
+  .rodata            const    0x4000'7aac     0x18  usb_dma_control.o [1]
+  .rodata            const    0x4000'7ac4     0x18  usb_fastboot.o [1]
+  .rodata            const    0x4000'7adc     0x18  usb_fastboot.o [1]
+  .rodata            const    0x4000'7af4     0x18  usb_fastboot.o [1]
+  .rodata            const    0x4000'7b0c     0x18  usb_fastboot.o [1]
+  .rodata            const    0x4000'7b24     0x18  usb_fastboot.o [1]
+  .rodata            const    0x4000'7b3c     0x18  usb_fastboot.o [1]
+  .rodata            const    0x4000'7b54     0x18  usb_fastboot.o [1]
+  .text              ro code  0x4000'7b6c     0x16  xprout.o [2]
+  .text              ro code  0x4000'7b82      0xc  putchar.o [2]
+  .rodata            const    0x4000'7b90     0x14  gic.o [1]
+  .rodata            const    0x4000'7ba4     0x14  spi_hal.o [1]
+  .rodata            const    0x4000'7bb8     0x14  usb_base_80.o [1]
+  .rodata            const    0x4000'7bcc     0x14  usb_base_80.o [1]
+  .rodata            const    0x4000'7be0     0x14  usb_base_80.o [1]
+  .rodata            const    0x4000'7bf4     0x14  usb_base_80.o [1]
+  .rodata            const    0x4000'7c08     0x14  usb_base_80.o [1]
+  .rodata            const    0x4000'7c1c     0x14  usb_fastboot.o [1]
+  .rodata            const    0x4000'7c30     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7c40     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7c50     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7c60     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7c70     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7c80     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7c90     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7ca0     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7cb0     0x10  usb_base_80.o [1]
+  .rodata            const    0x4000'7cc0     0x10  usb_fastboot.o [1]
+  .rodata            const    0x4000'7cd0     0x10  usb_fastboot.o [1]
+  .rodata            const    0x4000'7ce0     0x10  usb_fastboot.o [1]
+  .rodata            const    0x4000'7cf0     0x10  usb_fastboot.o [1]
+  .rodata            const    0x4000'7d00     0x10  xprintffull.o [2]
+  .rodata            const    0x4000'7d10     0x10  xprintffull.o [2]
+  .rodata            const    0x4000'7d20      0xc  usb_base_80.o [1]
+  .rodata            const    0x4000'7d2c      0xc  usb_base_80.o [1]
+  .rodata            const    0x4000'7d38      0xc  usb_base_80.o [1]
+  .rodata            const    0x4000'7d44      0xc  usb_fastboot.o [1]
+  .rodata            const    0x4000'7d50      0xc  usb_fastboot.o [1]
+  .rodata            const    0x4000'7d5c      0xc  usb_fastboot.o [1]
+  .rodata            const    0x4000'7d68      0x8  spi_hal.o [1]
+  .rodata            const    0x4000'7d70      0x8  usb_base_80.o [1]
+  .rodata            const    0x4000'7d78      0x8  usb_base_80.o [1]
+  .rodata            const    0x4000'7d80      0x8  usb_fastboot.o [1]
+  .rodata            const    0x4000'7d88      0x8  xprintffull.o [2]
+  .text              ro code  0x4000'7d90      0x4  vectortrap.o [4]
+  .text              ro code  0x4000'7d94      0x4  xreturnswi.o [5]
+  .rodata            const    0x4000'7d98      0x0  zero_init3.o [4]
+  .rodata            const    0x4000'7d98      0x0  lz77_init_single.o [4]
+  Initializer bytes  const    0x4000'7d98    0x266  <for P2-1>
+                            - 0x4000'7ffe   0x7fa2
+
+"P2", part 1 of 3:                          0x1bfc
+  P2-1                        0x4004'0300   0x1bfc  <Init block>
+    .data            inited   0x4004'0300   0x1a54  clock.o [1]
+    .data            inited   0x4004'1d54      0x4  gpio.o [1]
+    .data            inited   0x4004'1d58      0x4  gpio.o [1]
+    .data            inited   0x4004'1d5c      0x4  gpio.o [1]
+    .data            inited   0x4004'1d60      0x4  spi_hal.o [1]
+    .data            inited   0x4004'1d64     0x10  timer.o [1]
+    .data            inited   0x4004'1d74     0x10  uart.o [1]
+    .data            inited   0x4004'1d84      0x8  usb_fastboot.o [1]
+    .data            inited   0x4004'1d8c     0x18  usb_fastboot.o [1]
+    .data            inited   0x4004'1da4     0x3c  usb_fastboot.o [1]
+    .data            inited   0x4004'1de0     0x24  usb_fastboot.o [1]
+    .data            inited   0x4004'1e04     0x20  usb_fastboot.o [1]
+    .data            inited   0x4004'1e24      0xc  usbc.o [1]
+    .data            inited   0x4004'1e30      0x4  usbc_dev.o [1]
+    .data            inited   0x4004'1e34     0x38  xlocale_c.o [2]
+    .data            inited   0x4004'1e6c     0x48  xlocale_c.o [2]
+    .data            inited   0x4004'1eb4     0x48  xfiles.o [2]
+                            - 0x4004'1efc   0x1bfc
+
+"P2", part 2 of 3:                         0x11acc
+  .bss               zero     0x4004'1efc  0x10000  usb_fastboot.o [1]
+  .bss               zero     0x4005'1efc    0xf28  spi_hal.o [1]
+  .bss               zero     0x4005'2e24    0x4e8  gic.o [1]
+  .bss               zero     0x4005'330c    0x200  usb_base_80.o [1]
+  .bss               zero     0x4005'350c    0x1d8  dlmalloc.o [2]
+  .bss               zero     0x4005'36e4     0x80  sunxi_dma.o [1]
+  .bss               zero     0x4005'3764     0x80  usbc.o [1]
+  .bss               zero     0x4005'37e4     0x70  sunxi_dma.o [1]
+  .bss               zero     0x4005'3854     0x50  xfiles.o [2]
+  .bss               zero     0x4005'38a4     0x2c  usb_base_80.o [1]
+  .bss               zero     0x4005'38d0     0x20  usb_dma_control.o [1]
+  .bss               zero     0x4005'38f0     0x1c  usb_fastboot.o [1]
+  .bss               zero     0x4005'390c     0x18  usbc.o [1]
+  .bss               zero     0x4005'3924     0x18  dlmalloc.o [2]
+  .bss               zero     0x4005'393c     0x14  usb_base_80.o [1]
+  .bss               zero     0x4005'3950     0x10  timer.o [1]
+  .bss               zero     0x4005'3960      0x4  main.o [1]
+  .bss               zero     0x4005'3964      0x4  spi_hal.o [1]
+  .bss               zero     0x4005'3968      0x4  spi_hal.o [1]
+  .bss               zero     0x4005'396c      0x4  spi_hal.o [1]
+  .bss               zero     0x4005'3970      0x4  sunxi_dma.o [1]
+  .bss               zero     0x4005'3974      0x4  timer.o [1]
+  .bss               zero     0x4005'3978      0x4  uart.o [1]
+  .bss               zero     0x4005'397c      0x4  uart.o [1]
+  .bss               zero     0x4005'3980      0x4  uart.o [1]
+  .bss               zero     0x4005'3984      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'3988      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'398c      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'3990      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'3994      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'3998      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'399c      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'39a0      0x4  usb_base_80.o [1]
+  .bss               zero     0x4005'39a4      0x4  usb_dma_control.o [1]
+  .bss               zero     0x4005'39a8      0x4  usb_fastboot.o [1]
+  .bss               zero     0x4005'39ac      0x4  usb_fastboot.o [1]
+  .bss               zero     0x4005'39b0      0x4  usb_fastboot.o [1]
+  .bss               zero     0x4005'39b4      0x4  usb_fastboot.o [1]
+  .bss               zero     0x4005'39b8      0x4  usb_fastboot.o [1]
+  .bss               zero     0x4005'39bc      0x4  xfail_s.o [2]
+  .bss               zero     0x4005'39c0      0x4  xgetmemchunk.o [2]
+  .bss               zero     0x4005'39c4      0x1  spi_hal.o [1]
+                            - 0x4005'39c5  0x11ac9
+
+"P2", part 3 of 3:                          0xa200
+  CSTACK                      0x4005'39c8   0x2000  <Block>
+    CSTACK           uninit   0x4005'39c8   0x2000  <Block tail>
+  IRQ_STACK                   0x4005'59c8    0x100  <Block>
+    IRQ_STACK        uninit   0x4005'59c8    0x100  <Block tail>
+  FIQ_STACK                   0x4005'5ac8    0x100  <Block>
+    FIQ_STACK        uninit   0x4005'5ac8    0x100  <Block tail>
+  HEAP                        0x4005'5bc8   0x8000  <Block>
+    HEAP             uninit   0x4005'5bc8   0x8000  <Block tail>
+                            - 0x4005'dbc8   0xa200
+
+Unused ranges:
+
+         From           To         Size
+         ----           --         ----
+  0x4000'7ffe  0x4004'02ff     0x3'8302
+  0x4005'dbc8     0x4'0000  0xbffe'2439
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x11ac9:
+          0x4004'1efc  0x11ac9
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x266 (8% of destination):
+          0x4000'7d98    0x266
+    1 destination range, total size 0x1bfc:
+          0x4004'0300   0x1bfc
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data  rw data
+                                                    (abs)
+    ------              -------  -------  -------  -------
+command line/config:
+    ------------------------------------------------------
+    Total:
+
+F:\H3_wk\H3\H3_git\EWARM\H3\Obj: [1]
+    cache_cp15.o            116
+    cache_v7.o              618      128
+    clock.o                 244      577    6 740
+    cp15.o                1 264
+    gic.o                   868      212    1 256
+    gpio.o                  528        1       12       48
+    interrupts.o             42
+    main.o                   84                 4
+    mmu.o                   176
+    spi_hal.o             1 324      337    3 897
+    startup_H3.o            320
+    sunxi_dma.o             800       96      244
+    timer.o                 520       85       36
+    uart.o                  688       25       28
+    usb_base_80.o         3 892    1 044      608
+    usb_dma_control.o       276       52       36
+    usb_fastboot.o        1 260      586   65 744
+    usbc.o                1 676        1      164
+    usbc_dev.o            2 110                 4
+    usbc_dma.o              224
+    usbc_resource.o         184
+    ------------------------------------------------------
+    Total:               17 214    3 144   78 773       48
+
+dl7Sx_tlf.a: [2]
+    abort.o                   6
+    dlmalloc.o            5 396               496
+    exit.o                    4
+    heaptramp0.o              4
+    low_level_init.o          4
+    printf.o                 42
+    putchar.o                12
+    xencoding_8859_1.o       30
+    xfail_s.o                46       32        4
+    xfiles.o                           7      152
+    xgetmemchunk.o           48                 4
+    xlocale_c.o             136       16      128
+    xmbcurmax.o              10
+    xprintffull.o         4 102      146
+    xprout.o                 22
+    ------------------------------------------------------
+    Total:                9 862      201      784
+
+m7Sx_tlv.a: [3]
+    DblCmpGe.o               46
+    DblCmpLe.o               46
+    DblDiv.o                 18
+    DblMul.o                 18
+    DblSub.o                 18
+    DblToS32.o               14
+    DblToU32.o               14
+    S32ToDbl.o               14
+    U32ToDbl.o               14
+    fpinit.o                 40
+    frexp.o                 112
+    ldexp.o                 260
+    ------------------------------------------------------
+    Total:                  614
+
+rt7Sx_tl.a: [4]
+    ABImemcpy.o             212
+    ABImemset.o             116
+    I32DivMod.o             424
+    I64DivMod.o             304
+    I64DivZer.o               4
+    IntDivZer.o               4
+    cexit.o                  16
+    cmain.o                  48
+    data_init.o              48
+    lz77_init_single.o      122
+    memchr.o                148
+    strchr.o                 32
+    strlen.o                 84
+    vectortrap.o              4
+    zero_init3.o             58
+    ------------------------------------------------------
+    Total:                1 624
+
+sh7Sxs_l.a: [5]
+    exit.o                   20
+    xreturnswi.o              4
+    ------------------------------------------------------
+    Total:                   24
+
+    Gaps                      9        2
+    Linker created            8       32   41 472
+----------------------------------------------------------
+    Grand Total:         29 355    3 379  121 029       48
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address     Size  Type      Object
+-----                       -------     ----  ----      ------
+.iar.init_table$$Base   0x4000'7814            --   Gb  - Linker created -
+.iar.init_table$$Limit  0x4000'7834            --   Gb  - Linker created -
+?main                   0x4000'707c           Code  Gb  cmain.o [4]
+Abort_Handler           0x4000'7d90           Code  Wk  vectortrap.o [4]
+CP15AuxControlFeatureDisable
+                        0x4000'644c           Code  Gb  cp15.o [1]
+CP15AuxControlFeatureEnable
+                        0x4000'6438           Code  Gb  cp15.o [1]
+CP15BranchPredictionDisable
+                        0x4000'63e0           Code  Gb  cp15.o [1]
+CP15BranchPredictionEnable
+                        0x4000'63d0           Code  Gb  cp15.o [1]
+CP15BranchPredictorInvalidate
+                        0x4000'63c4           Code  Gb  cp15.o [1]
+CP15ControlFeatureDisable
+                        0x4000'6400           Code  Gb  cp15.o [1]
+CP15ControlFeatureEnable
+                        0x4000'6414           Code  Gb  cp15.o [1]
+CP15DCacheClean         0x4000'60dc           Code  Gb  cp15.o [1]
+CP15DCacheCleanBuff     0x4000'6214           Code  Gb  cp15.o [1]
+CP15DCacheCleanFlush    0x4000'6170           Code  Gb  cp15.o [1]
+CP15DCacheCleanFlushBuff
+                        0x4000'6268           Code  Gb  cp15.o [1]
+CP15DCacheDisable       0x4000'600c           Code  Gb  cp15.o [1]
+CP15DCacheEnable        0x4000'6038           Code  Gb  cp15.o [1]
+CP15DCacheFlush         0x4000'6048           Code  Gb  cp15.o [1]
+CP15DCacheFlushBuff     0x4000'62bc           Code  Gb  cp15.o [1]
+CP15DomainAccessClientSet
+                        0x4000'63f0           Code  Gb  cp15.o [1]
+CP15EnableVFP           0x4000'6490           Code  Gb  cp15.o [1]
+CP15EnableVFP_A7        0x4000'646c           Code  Gb  cp15.o [1]
+CP15ICacheDisable       0x4000'5ff0           Code  Gb  cp15.o [1]
+CP15ICacheEnable        0x4000'6028           Code  Gb  cp15.o [1]
+CP15ICacheFlush         0x4000'6204           Code  Gb  cp15.o [1]
+CP15ICacheFlushBuff     0x4000'6320           Code  Gb  cp15.o [1]
+CP15MMUDisable          0x4000'638c           Code  Gb  cp15.o [1]
+CP15MMUEnable           0x4000'63a4           Code  Gb  cp15.o [1]
+CP15MainIdPrimPartNumGet
+                        0x4000'6460           Code  Gb  cp15.o [1]
+CP15TlbInvalidate       0x4000'6380           Code  Gb  cp15.o [1]
+CP15Ttb0Set             0x4000'6374           Code  Gb  cp15.o [1]
+CP15TtbCtlTtb0Config    0x4000'6428           Code  Gb  cp15.o [1]
+CP15VectorBaseAddrSet   0x4000'63b8           Code  Gb  cp15.o [1]
+CPU0_Config              0x1f0'1c40      0xc  Data  Gb  gpio.o [1]
+CPU1_Config              0x1f0'1c80      0xc  Data  Gb  gpio.o [1]
+CPU2_Config              0x1f0'1cc0      0xc  Data  Gb  gpio.o [1]
+CPU3_Config              0x1f0'1d00      0xc  Data  Gb  gpio.o [1]
+CSTACK$$Base            0x4005'39c8            --   Gb  - Linker created -
+CSTACK$$Limit           0x4005'59c8            --   Gb  - Linker created -
+CacheMore               0x4000'25cb     0x24  Code  Lc  xlocale_c.o [2]
+ConfigurationDescriptor
+                        0x4004'1de0     0x24  Data  Gb  usb_fastboot.o [1]
+EINT_A6_config          0x4000'6e03     0x50  Code  Gb  gpio.o [1]
+FIQ_Handler             0x4000'7d90           Code  Wk  vectortrap.o [4]
+FIQ_STACK$$Base         0x4005'5ac8            --   Gb  - Linker created -
+FIQ_STACK$$Limit        0x4005'5bc8            --   Gb  - Linker created -
+FastInit                0x4000'693d     0x10  Code  Gb  usb_fastboot.o [1]
+GPA_EINT_func           0x4000'6de3     0x20  Code  Gb  gpio.o [1]
+HEAP$$Base              0x4005'5bc8            --   Gb  - Linker created -
+HEAP$$Limit             0x4005'dbc8            --   Gb  - Linker created -
+IRQ_STACK$$Base         0x4005'59c8            --   Gb  - Linker created -
+IRQ_STACK$$Limit        0x4005'5ac8            --   Gb  - Linker created -
+IsSent                  0x4005'3994      0x4  Data  Gb  usb_base_80.o [1]
+LoadInt                 0x4000'17ab     0x7a  Code  Lc  xprintffull.o [2]
+PA_EINT                 0x4004'1d5c      0x4  Data  Gb  gpio.o [1]
+PORTA                   0x4004'1d54      0x4  Data  Gb  gpio.o [1]
+PORTC                   0x4004'1d58      0x4  Data  Gb  gpio.o [1]
+Prefetch_Handler        0x4000'7d90           Code  Wk  vectortrap.o [4]
+Reciveddata             0x4005'39c4      0x1  Data  Gb  spi_hal.o [1]
+Region$$Table$$Base     0x4000'7814            --   Gb  - Linker created -
+Region$$Table$$Limit    0x4000'7834            --   Gb  - Linker created -
+ReportDescriptor        0x4004'1da4     0x3c  Data  Gb  usb_fastboot.o [1]
+SPI0_ctl                0x4004'1d60      0x4  Data  Gb  spi_hal.o [1]
+SWI_Handler             0x4000'7d90           Code  Wk  vectortrap.o [4]
+Sentmakr                0x4005'39b8      0x4  Data  Gb  usb_fastboot.o [1]
+UART0_dma_init          0x4000'6aa1    0x17a  Code  Gb  uart.o [1]
+UART_DMA_R              0x4000'6c1b     0x14  Code  Gb  uart.o [1]
+USBC_ConfigFIFO_Base    0x4000'3e81     0x2e  Code  Gb  usbc.o [1]
+USBC_ConfigFifo         0x4000'3f69     0x46  Code  Gb  usbc.o [1]
+USBC_Dev_ClearEpDma     0x4000'4ac5     0x4c  Code  Gb  usbc_dev.o [1]
+USBC_Dev_ConectSwitch   0x4000'4a39     0x32  Code  Gb  usbc_dev.o [1]
+USBC_Dev_ConfigEp       0x4000'4a6b     0x5a  Code  Gb  usbc_dev.o [1]
+USBC_Dev_ConfigTransferMode
+                        0x4000'49bd     0x7c  Code  Gb  usbc_dev.o [1]
+USBC_Dev_Ctrl_ClearSetupEnd
+                        0x4000'4bed     0x12  Code  Gb  usbc_dev.o [1]
+USBC_Dev_Ctrl_IsSetupEnd
+                        0x4000'4bd7     0x16  Code  Gb  usbc_dev.o [1]
+USBC_Dev_EpClearStall   0x4000'4b95     0x42  Code  Gb  usbc_dev.o [1]
+USBC_Dev_EpSendStall    0x4000'4b53     0x42  Code  Gb  usbc_dev.o [1]
+USBC_Dev_IsEpStall      0x4000'4b11     0x42  Code  Gb  usbc_dev.o [1]
+USBC_Dev_IsReadDataReady
+                        0x4000'4d27     0x34  Code  Gb  usbc_dev.o [1]
+USBC_Dev_IsWriteDataReady
+                        0x4000'4d5b     0x34  Code  Gb  usbc_dev.o [1]
+USBC_Dev_QueryTransferMode
+                        0x4000'499f     0x1e  Code  Gb  usbc_dev.o [1]
+USBC_Dev_ReadDataStatus
+                        0x4000'4cfb     0x2c  Code  Gb  usbc_dev.o [1]
+USBC_Dev_SetAddress     0x4000'4991      0xe  Code  Gb  usbc_dev.o [1]
+USBC_Dev_SetAddress_default
+                        0x4000'4981     0x10  Code  Gb  usbc_dev.o [1]
+USBC_Dev_WriteDataStatus
+                        0x4000'4ccf     0x2c  Code  Gb  usbc_dev.o [1]
+USBC_Dma_Int_Clear      0x4000'54f1     0x1c  Code  Gb  usbc_dma.o [1]
+USBC_Dma_Int_Query      0x4000'54d9     0x18  Code  Gb  usbc_dma.o [1]
+USBC_Dma_Int_Stop       0x4000'54ad     0x2c  Code  Gb  usbc_dma.o [1]
+USBC_Dma_Set_ChannalPara
+                        0x4000'542d     0x40  Code  Gb  usbc_dma.o [1]
+USBC_Dma_Set_PktLen     0x4000'546d     0x3a  Code  Gb  usbc_dma.o [1]
+USBC_EnableDpDmPullUp   0x4000'423d     0x24  Code  Gb  usbc.o [1]
+USBC_EnableIdPullUp     0x4000'4219     0x24  Code  Gb  usbc.o [1]
+USBC_EnhanceSignal      0x4000'4205      0x2  Code  Gb  usbc.o [1]
+USBC_ForceId            0x4000'42bf     0x2c  Code  Gb  usbc.o [1]
+USBC_ForceVbusValid     0x4000'4349     0x2c  Code  Gb  usbc.o [1]
+USBC_GetActiveEp        0x4000'41e1     0x16  Code  Gb  usbc.o [1]
+USBC_INT_ClearEpPending
+                        0x4000'40a1     0x36  Code  Gb  usbc.o [1]
+USBC_INT_ClearEpPendingAll
+                        0x4000'40d7     0x2c  Code  Gb  usbc.o [1]
+USBC_INT_ClearMiscPending
+                        0x4000'4119      0xe  Code  Gb  usbc.o [1]
+USBC_INT_ClearMiscPendingAll
+                        0x4000'4127     0x10  Code  Gb  usbc.o [1]
+USBC_INT_DisableEpAll   0x4000'41a7     0x2a  Code  Gb  usbc.o [1]
+USBC_INT_DisableUsbMiscAll
+                        0x4000'41d1     0x10  Code  Gb  usbc.o [1]
+USBC_INT_DisableUsbMiscUint
+                        0x4000'4189     0x1e  Code  Gb  usbc.o [1]
+USBC_INT_EnableEp       0x4000'4137     0x34  Code  Gb  usbc.o [1]
+USBC_INT_EnableUsbMiscUint
+                        0x4000'416b     0x1e  Code  Gb  usbc.o [1]
+USBC_INT_EpPending      0x4000'406f     0x32  Code  Gb  usbc.o [1]
+USBC_INT_MiscPending    0x4000'4103     0x16  Code  Gb  usbc.o [1]
+USBC_ReadLenFromFifo    0x4000'3d85     0x36  Code  Gb  usbc.o [1]
+USBC_ReadPacket         0x4000'3e1f     0x62  Code  Gb  usbc.o [1]
+USBC_SelectActiveEp     0x4000'41f7      0xe  Code  Gb  usbc.o [1]
+USBC_SelectBus          0x4000'3faf     0x44  Code  Gb  usbc.o [1]
+USBC_SelectFIFO         0x4000'3eb5     0x14  Code  Gb  usbc.o [1]
+USBC_WritePacket        0x4000'3dbb     0x64  Code  Gb  usbc.o [1]
+USBC_close_otg          0x4000'43eb     0x1e  Code  Gb  usbc.o [1]
+USBC_open_otg           0x4000'4375     0x30  Code  Gb  usbc.o [1]
+Undefined_Handler       0x4000'7d90           Code  Wk  vectortrap.o [4]
+_Encoding_8859_1_Mbrlen
+                        0x4000'2a65      0x2  Code  Gb  xencoding_8859_1.o [2]
+_Encoding_8859_1_Wctomb
+                        0x4000'2a53     0x12  Code  Gb  xencoding_8859_1.o [2]
+_GenldFull              0x4000'230b    0x288  Code  Lc  xprintffull.o [2]
+_LdtobFull              0x4000'1ea9    0x45c  Code  Lc  xprintffull.o [2]
+_LitobFull              0x4000'1d53    0x10c  Code  Lc  xprintffull.o [2]
+_Locale_lconv           0x4004'1e34     0x38  Data  Lc  xlocale_c.o [2]
+_PrintfFull             0x4000'15bb    0x1ea  Code  Gb  xprintffull.o [2]
+_Prout                  0x4000'7b6d     0x16  Code  Gb  xprout.o [2]
+_PutcharsFull           0x4000'2593     0x2e  Code  Lc  xprintffull.o [2]
+_PutfldFull             0x4000'1825    0x368  Code  Lc  xprintffull.o [2]
+_PutstrFull             0x4000'1c83     0xd0  Code  Lc  xprintffull.o [2]
+_PuttxtFull             0x4000'1b8d     0xf6  Code  Lc  xprintffull.o [2]
+__USBC_ConfigFifo_RxEp  0x4000'3f19     0x50  Code  Gb  usbc.o [1]
+__USBC_ConfigFifo_TxEp  0x4000'3ec9     0x50  Code  Gb  usbc.o [1]
+__USBC_Dev_ClearDma_Trans
+                        0x4000'496f     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ReadDataComplete
+                        0x4000'4c9b     0x34  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ReadDataHalf
+                        0x4000'4c67     0x34  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_ClearEpDma
+                        0x4000'48bf     0x24  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_ClearStall
+                        0x4000'4949     0x26  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_ConfigEp  0x4000'4849     0x76  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_EnableBulkEp
+                        0x4000'4835     0x14  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_EnableIntEp
+                        0x4000'4821     0x14  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_EnableIsoEp
+                        0x4000'480f     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_IsEpStall
+                        0x4000'493d      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_IsReadDataReady
+                        0x4000'48e3      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_ReadDataComplete
+                        0x4000'490d     0x1e  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_ReadDataHalf
+                        0x4000'48ef     0x1e  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Rx_SendStall
+                        0x4000'492b     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsMode_Fs    0x4000'45cf     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsMode_Hs    0x4000'45bd     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsMode_Ls    0x4000'45e1      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsMode_default
+                        0x4000'45ab     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsType_Bulk  0x4000'4599     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsType_Ctrl  0x4000'4563     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsType_Int   0x4000'4587     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsType_Iso   0x4000'4575     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_TsType_default
+                        0x4000'4551     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_ClearEpDma
+                        0x4000'4761     0x36  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_ClearStall
+                        0x4000'47fb     0x14  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_ConfigEp  0x4000'46e3     0x7e  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_EnableBulkEp
+                        0x4000'46cf     0x14  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_EnableIntEp
+                        0x4000'46bb     0x14  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_EnableIsoEp
+                        0x4000'46a9     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_IsEpStall
+                        0x4000'47ef      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_IsWriteDataReady
+                        0x4000'4797     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_SendStall
+                        0x4000'47dd     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_WriteDataComplete
+                        0x4000'47c3     0x1a  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_Tx_WriteDataHalf
+                        0x4000'47a9     0x1a  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_WriteDataComplete
+                        0x4000'4c33     0x34  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_WriteDataHalf
+                        0x4000'4bff     0x34  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_ClearSetupEnd
+                        0x4000'4697     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_ClearStall
+                        0x4000'4665     0x26  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_ConfigEp0
+                        0x4000'45ed      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_IsEpStall
+                        0x4000'4647      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_IsReadDataReady
+                        0x4000'45f9      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_IsSetupEnd
+                        0x4000'468b      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_IsWriteDataReady
+                        0x4000'4605      0xc  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_ReadDataComplete
+                        0x4000'461b      0xa  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_ReadDataHalf
+                        0x4000'4611      0xa  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_SendStall
+                        0x4000'4653     0x12  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_WriteDataComplete
+                        0x4000'463d      0xa  Code  Lc  usbc_dev.o [1]
+__USBC_Dev_ep0_WriteDataHalf
+                        0x4000'4625     0x14  Code  Lc  usbc_dev.o [1]
+__USBC_ForceIdDisable   0x4000'4261     0x1e  Code  Lc  usbc.o [1]
+__USBC_ForceIdToHigh    0x4000'42a1     0x1e  Code  Lc  usbc.o [1]
+__USBC_ForceIdToLow     0x4000'427f     0x22  Code  Lc  usbc.o [1]
+__USBC_ForceVbusValidDisable
+                        0x4000'42eb     0x1e  Code  Lc  usbc.o [1]
+__USBC_ForceVbusValidToHigh
+                        0x4000'432b     0x1e  Code  Lc  usbc.o [1]
+__USBC_ForceVbusValidToLow
+                        0x4000'4309     0x22  Code  Lc  usbc.o [1]
+__USBC_INT_ClearRxPending
+                        0x4000'401b      0xc  Code  Lc  usbc.o [1]
+__USBC_INT_ClearRxPendingAll
+                        0x4000'4027      0xc  Code  Lc  usbc.o [1]
+__USBC_INT_ClearTxPending
+                        0x4000'3ffb      0xc  Code  Lc  usbc.o [1]
+__USBC_INT_ClearTxPendingAll
+                        0x4000'4007      0xc  Code  Lc  usbc.o [1]
+__USBC_INT_DisableRxAll
+                        0x4000'4065      0xa  Code  Lc  usbc.o [1]
+__USBC_INT_DisableTxAll
+                        0x4000'405b      0xa  Code  Lc  usbc.o [1]
+__USBC_INT_EnableRxEp   0x4000'4047     0x14  Code  Lc  usbc.o [1]
+__USBC_INT_EnableTxEp   0x4000'4033     0x14  Code  Lc  usbc.o [1]
+__USBC_INT_RxPending    0x4000'4013      0x8  Code  Lc  usbc.o [1]
+__USBC_INT_TxPending    0x4000'3ff3      0x8  Code  Lc  usbc.o [1]
+__USBC_WakeUp_ClearChangeDetect
+                        0x4000'4207     0x12  Code  Lc  usbc.o [1]
+__aeabi_cdcmple         0x4000'2ae1           Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple        0x4000'2b11           Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz            0x4000'2c45      0xe  Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz           0x4000'2c85      0xe  Code  Gb  DblToU32.o [3]
+__aeabi_ddiv            0x4000'2c73     0x12  Code  Gb  DblDiv.o [3]
+__aeabi_dmul            0x4000'2a41     0x12  Code  Gb  DblMul.o [3]
+__aeabi_dsub            0x4000'2c61     0x12  Code  Gb  DblSub.o [3]
+__aeabi_i2d             0x4000'2c53      0xe  Code  Gb  S32ToDbl.o [3]
+__aeabi_idiv            0x4000'2ca0           Code  Gb  I32DivMod.o [4]
+__aeabi_idiv0           0x4000'2e4c           Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x4000'2ca0           Code  Gb  I32DivMod.o [4]
+__aeabi_ldiv0           0x4000'2e48           Code  Gb  I64DivZer.o [4]
+__aeabi_memcpy          0x4000'283c           Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x4000'2860           Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x4000'2860           Code  Gb  ABImemcpy.o [4]
+__aeabi_memset          0x4000'50f4           Code  Gb  ABImemset.o [4]
+__aeabi_ui2d            0x4000'2c93      0xe  Code  Gb  U32ToDbl.o [3]
+__aeabi_uidiv           0x4000'2ccc           Code  Gb  I32DivMod.o [4]
+__aeabi_uidivmod        0x4000'2ccc           Code  Gb  I32DivMod.o [4]
+__aeabi_uldivmod        0x4000'2910           Code  Gb  I64DivMod.o [4]
+__cmain                 0x4000'707c           Code  Gb  cmain.o [4]
+__data_GetMemChunk      0x4000'1577     0x30  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x4005'39c0      0x4  Data  Lc  xgetmemchunk.o [2]
+__exit                  0x4000'15a7     0x14  Code  Gb  exit.o [5]
+__iar_Fail_s            0x4000'2669     0x2e  Code  Gb  xfail_s.o [2]
+__iar_Mbcurmax          0x4000'27f9      0xa  Code  Gb  xmbcurmax.o [2]
+__iar_Memchr            0x4000'2764           Code  Gb  memchr.o [4]
+__iar_Memset            0x4000'50f4           Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x4000'50fc           Code  Gb  ABImemset.o [4]
+__iar_Stdout            0x4004'1eb4     0x48  Data  Gb  xfiles.o [2]
+__iar_Strchr            0x4000'2648           Code  Gb  strchr.o [4]
+__iar_data_init3        0x4000'70b1     0x30  Code  Gb  data_init.o [4]
+__iar_dlfree            0x4000'106b    0x4fa  Code  Gb  dlmalloc.o [2]
+__iar_dlmalloc          0x4000'0db1    0x2ba  Code  Gb  dlmalloc.o [2]
+__iar_frexp             0x4000'2a7d           Code  Gb  frexp.o [3]
+__iar_frexpl            0x4000'2a7d           Code  Gb  frexp.o [3]
+__iar_globLocale        0x4004'1e6c     0x48  Data  Lc  xlocale_c.o [2]
+__iar_global_Locale     0x4000'25c1      0xa  Code  Gb  xlocale_c.o [2]
+__iar_init_vfp          0x4000'7068           Code  Gb  fpinit.o [3]
+__iar_init_vfp_v6       0x4000'7054           Code  Gb  fpinit.o [3]
+__iar_ldexp64           0x4000'2b55           Code  Gb  ldexp.o [3]
+__iar_lz77_init_single3
+                        0x4000'2697     0x7a  Code  Gb  lz77_init_single.o [4]
+__iar_program_start     0x4000'6f80           Code  Gb  startup_H3.o [1]
+__iar_return_from_swi   0x4000'7d94      0x4  Code  Gb  xreturnswi.o [5]
+__iar_scalbln64         0x4000'2b55           Code  Gb  ldexp.o [3]
+__iar_scalbn64          0x4000'2b55           Code  Gb  ldexp.o [3]
+__iar_softfp___iar_frexp64
+                        0x4000'2a71           Code  Gb  frexp.o [3]
+__iar_softfp___iar_ldexp64
+                        0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp___iar_scalbln64
+                        0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp___iar_scalbn64
+                        0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp_frexp      0x4000'2a71           Code  Gb  frexp.o [3]
+__iar_softfp_frexpl     0x4000'2a71           Code  Gb  frexp.o [3]
+__iar_softfp_ldexp      0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp_ldexpl     0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp_scalbln    0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp_scalblnl   0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp_scalbn     0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_softfp_scalbnl    0x4000'2b41           Code  Gb  ldexp.o [3]
+__iar_zero_init3        0x4000'2803     0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init        0x4000'70ad      0x4  Code  Gb  low_level_init.o [2]
+__msdelay               0x4000'5275     0x18  Code  Gb  timer.o [1]
+__spi_rev_by_dma_isr    0x4000'585f     0x14  Code  Lc  spi_hal.o [1]
+__uart_rev_by_dma_isr   0x4000'6a8b     0x16  Code  Lc  uart.o [1]
+__uart_sent_by_dma_isr  0x4000'6a7d      0xe  Code  Lc  uart.o [1]
+__usb_bulk_ep_reset     0x4000'3475     0x88  Code  Lc  usb_base_80.o [1]
+__usb_clear_all_irq     0x4000'33a1     0x1e  Code  Lc  usb_base_80.o [1]
+__usb_get_descriptor    0x4000'6567    0x234  Code  Lc  usb_fastboot.o [1]
+__usb_get_status        0x4000'679b     0x44  Code  Lc  usb_fastboot.o [1]
+__usb_index_check       0x4000'4411     0x32  Code  Lc  usb_dma_control.o [1]
+__usb_interuput_ep_reset
+                        0x4000'34fd     0x52  Code  Lc  usb_base_80.o [1]
+__usb_read_ep0_data     0x4000'354f     0x82  Code  Lc  usb_base_80.o [1]
+__usb_readcomplete      0x4000'33bf     0x2c  Code  Lc  usb_base_80.o [1]
+__usb_recv_by_dma_isr   0x4000'3303     0x9e  Code  Lc  usb_base_80.o [1]
+__usb_send_by_dma_isr   0x4000'3265     0x9e  Code  Lc  usb_base_80.o [1]
+__usb_set_address       0x4000'6513     0x22  Code  Lc  usb_fastboot.o [1]
+__usb_set_configuration
+                        0x4000'6535     0x32  Code  Lc  usb_fastboot.o [1]
+__usb_set_interface     0x4000'64e1     0x32  Code  Lc  usb_fastboot.o [1]
+__usb_write_fifo_setup  0x4000'35d1     0x8e  Code  Lc  usb_base_80.o [1]
+__usb_writecomplete     0x4000'33eb     0x40  Code  Lc  usb_base_80.o [1]
+__usb_writecomplete_wg  0x4000'342b     0x4a  Code  Gb  usb_base_80.o [1]
+__usdelay               0x4000'5257     0x1e  Code  Gb  timer.o [1]
+__v7_outer_cache_enable
+                        0x4000'5fe9      0x2  Code  Gb  cache_v7.o [1]
+__v7_outer_cache_flush_range
+                        0x4000'5fed      0x2  Code  Gb  cache_v7.o [1]
+__v7_outer_cache_inval_all
+                        0x4000'5feb      0x2  Code  Gb  cache_v7.o [1]
+__vector                0x4000'0020           Data  Gb  startup_H3.o [1]
+_call_main              0x4000'7094           Code  Gb  cmain.o [4]
+_exit                   0x4000'7264           Code  Gb  cexit.o [4]
+_gLocale_mblen          0x4000'262b      0xa  Code  Gb  xlocale_c.o [2]
+_gLocale_mblenInt       0x4000'25ef     0x2c  Code  Gb  xlocale_c.o [2]
+_gLocale_wctomb         0x4000'2635      0xa  Code  Gb  xlocale_c.o [2]
+_gLocale_wctombInt      0x4000'2627      0x4  Code  Gb  xlocale_c.o [2]
+_gm_                    0x4005'350c    0x1d8  Data  Lc  dlmalloc.o [2]
+_main                   0x4000'709c           Code  Gb  cmain.o [4]
+abort                   0x4000'1571      0x6  Code  Gb  abort.o [2]
+add_segment             0x4000'043b    0x1fc  Code  Lc  dlmalloc.o [2]
+add_timer               0x4000'52eb     0xcc  Code  Gb  timer.o [1]
+all_download_bytes      0x4005'39b0      0x4  Data  Lc  usb_fastboot.o [1]
+arch_interrupt_init     0x4000'5065     0x22  Code  Gb  gic.o [1]
+arm_init_before_mmu     0x4000'5fc9     0x10  Code  Gb  cache_v7.o [1]
+buf                     0x4004'1efc  0x10000  Data  Gb  usb_fastboot.o [1]
+cache_enable            0x4000'7177     0x28  Code  Lc  cache_cp15.o [1]
+ccm_clock_disable_bak   0x4000'55c1     0x3c  Code  Gb  spi_hal.o [1]
+ccm_clock_enable_bak    0x4000'5585     0x3c  Code  Gb  spi_hal.o [1]
+ccm_get_pll_periph_clk  0x4000'5615     0x20  Code  Gb  spi_hal.o [1]
+ccm_module_disable_bak  0x4000'5539     0x26  Code  Gb  spi_hal.o [1]
+ccm_module_enable_bak   0x4000'555f     0x26  Code  Gb  spi_hal.o [1]
+ccm_module_reset_bak    0x4000'55fd     0x18  Code  Gb  spi_hal.o [1]
+clk_get_pll_para        0x4000'6e8d     0x2a  Code  Lc  clock.o [1]
+clk_set_divd            0x4000'6eb7     0x28  Code  Lc  clock.o [1]
+cp_delay                0x4000'7151     0x1a  Code  Lc  cache_cp15.o [1]
+cpu_init                0x4000'6c7d     0x32  Code  Gb  gpio.o [1]
+dcache_enable           0x4000'71ab      0xa  Code  Gb  cache_cp15.o [1]
+default_isr             0x4000'4d91      0xe  Code  Lc  gic.o [1]
+disable_interrupts      0x4000'551d     0x1a  Code  Gb  interrupts.o [1]
+dma_channal_source      0x4005'37e4     0x70  Data  Lc  sunxi_dma.o [1]
+dma_int_count           0x4005'3970      0x4  Data  Lc  sunxi_dma.o [1]
+dma_mac                 0x4005'36e4     0x80  Data  Lc  sunxi_dma.o [1]
+do_irq                  0x4000'4eed     0x62  Code  Gb  gic.o [1]
+enable_interrupts       0x4000'550d      0xe  Code  Gb  interrupts.o [1]
+endpont_cont            0x4005'3998      0x4  Data  Gb  usb_base_80.o [1]
+ep0_recv_op             0x4000'3759    0x3b4  Code  Gb  usb_base_80.o [1]
+ep0_recv_op::ep0_stage  0x4005'39a0      0x4  Data  Lc  usb_base_80.o [1]
+ep0state                0x4005'399c      0x4  Data  Gb  usb_base_80.o [1]
+eprx_recv_op            0x4000'3b19    0x108  Code  Lc  usb_base_80.o [1]
+eptx_send_op            0x4000'3c21      0xa  Code  Lc  usb_base_80.o [1]
+exit                    0x4000'713d      0x4  Code  Gb  exit.o [2]
+fastboot_data_flag      0x4005'39b4      0x4  Data  Gb  usb_fastboot.o [1]
+flush_cache             0x4000'5fd9     0x10  Code  Gb  cache_v7.o [1]
+flush_dcache_range      0x4000'5faf     0x1a  Code  Gb  cache_v7.o [1]
+fputc                   0x4000'67df     0x12  Code  Gb  usb_fastboot.o [1]
+free                    0x4000'5429      0x4  Code  Gb  heaptramp0.o [2]
+g_cfg_mclk              0x4005'3964      0x4  Data  Lc  spi_hal.o [1]
+get_ccsidr              0x4000'5d91      0x6  Code  Lc  cache_v7.o [1]
+get_clidr               0x4000'5d99      0x6  Code  Lc  cache_v7.o [1]
+get_core_cont           0x4000'7259      0xc  Code  Gb  mmu.o [1]
+get_core_id             0x4000'724d      0xa  Code  Gb  mmu.o [1]
+get_cpu_id              0x4000'64b4           Code  Gb  cp15.o [1]
+get_cr                  0x4000'7141      0x6  Code  Lc  cache_cp15.o [1]
+get_dram_type_by_gpio   0x4000'6caf    0x134  Code  Gb  gpio.o [1]
+gic_clear_pending       0x4000'4e75     0x22  Code  Lc  gic.o [1]
+gic_cpuif_init          0x4000'500b     0x5a  Code  Lc  gic.o [1]
+gic_distributor_init    0x4000'4f4f     0xbc  Code  Lc  gic.o [1]
+gic_ppi_handler         0x4000'4e47      0xe  Code  Lc  gic.o [1]
+gic_sgi_handler         0x4000'4e39      0xe  Code  Lc  gic.o [1]
+gic_spi_handler         0x4000'4e55     0x20  Code  Lc  gic.o [1]
+icache_enable           0x4000'719f      0xc  Code  Gb  cache_cp15.o [1]
+id                      0x4005'3960      0x4  Data  Gb  main.o [1]
+init_mparams            0x4000'0077     0x40  Code  Lc  dlmalloc.o [2]
+init_top                0x4000'00b7     0x3a  Code  Lc  dlmalloc.o [2]
+invalidate_dcache_all   0x4000'5fa1      0xe  Code  Gb  cache_v7.o [1]
+irq_disable             0x4000'4def     0x4a  Code  Gb  gic.o [1]
+irq_enable              0x4000'4d9f     0x50  Code  Gb  gic.o [1]
+irq_free_handler        0x4000'4ec5     0x28  Code  Gb  gic.o [1]
+irq_install_handler     0x4000'4e97     0x2e  Code  Gb  gic.o [1]
+ldexp                   0x4000'2b55           Code  Gb  ldexp.o [3]
+ldexpl                  0x4000'2b55           Code  Gb  ldexp.o [3]
+localeconv              0x4000'263f      0xa  Code  Gb  xlocale_c.o [2]
+log_2_n_round_up        0x4000'5e11     0x1e  Code  Lc  cache_v7.o [1]
+main                    0x4000'70e1     0x54  Code  Gb  main.o [1]
+memchr                  0x4000'2764           Code  Gb  memchr.o [4]
+memset                  0x4000'43a9     0x42  Code  Gb  usbc.o [1]
+mmu2_setup              0x4000'71b5     0x98  Code  Gb  mmu.o [1]
+mmu_enabled             0x4000'716b      0xc  Code  Lc  cache_cp15.o [1]
+mparams                 0x4005'3924     0x18  Data  Lc  dlmalloc.o [2]
+obuf                    0x4005'3854     0x50  Data  Lc  xfiles.o [2]
+pll1_table              0x4004'0300   0x1a54  Data  Lc  clock.o [1]
+prepend_alloc           0x4000'00f1    0x34a  Code  Lc  dlmalloc.o [2]
+printf                  0x4000'4525     0x2a  Code  Gb  printf.o [2]
+putchar                 0x4000'7b83      0xc  Code  Gb  putchar.o [2]
+scalbln                 0x4000'2b55           Code  Gb  ldexp.o [3]
+scalblnl                0x4000'2b55           Code  Gb  ldexp.o [3]
+scalbn                  0x4000'2b55           Code  Gb  ldexp.o [3]
+scalbnl                 0x4000'2b55           Code  Gb  ldexp.o [3]
+scale                   0x4000'1e5f     0x4a  Code  Lc  xprintffull.o [2]
+sec_hand                0x4005'39bc      0x4  Data  Lc  xfail_s.o [2]
+segment_holding         0x4000'005d     0x1a  Code  Lc  dlmalloc.o [2]
+serial_ctrl_base        0x4005'3978      0x4  Data  Lc  uart.o [1]
+set_cr                  0x4000'7149      0x6  Code  Lc  cache_cp15.o [1]
+set_csselr              0x4000'5d85      0xa  Code  Lc  cache_v7.o [1]
+setup_req_3             0x4004'1e04     0x20  Data  Gb  usb_fastboot.o [1]
+spi_buf                 0x4005'1efc    0xf28  Data  Gb  spi_hal.o [1]
+spi_cfg_mclk            0x4000'5635     0xe2  Code  Gb  spi_hal.o [1]
+spi_dma_recv_start      0x4000'597b     0x22  Code  Lc  spi_hal.o [1]
+spi_dma_rev             0x4000'599d     0x10  Code  Gb  spi_hal.o [1]
+spi_get_mlk             0x4000'5717      0xa  Code  Gb  spi_hal.o [1]
+spi_gpio_cfg            0x4000'5721     0x2e  Code  Gb  spi_hal.o [1]
+spi_onoff               0x4000'574f     0x40  Code  Gb  spi_hal.o [1]
+spi_rx_dma_hd           0x4005'396c      0x4  Data  Lc  spi_hal.o [1]
+spi_test                0x4000'59ad     0x22  Code  Gb  spi_hal.o [1]
+spi_tx_dma_hd           0x4005'3968      0x4  Data  Lc  spi_hal.o [1]
+spic_init               0x4000'580b     0x54  Code  Gb  spi_hal.o [1]
+spic_init_dma           0x4000'5873    0x108  Code  Gb  spi_hal.o [1]
+spic_set_clk            0x4000'578f     0x7c  Code  Gb  spi_hal.o [1]
+standby_serial_putc     0x4000'53b7     0x14  Code  Gb  timer.o [1]
+strchr                  0x4000'2648           Code  Gb  strchr.o [4]
+strlen                  0x4000'2710           Code  Gb  strlen.o [4]
+sunxi_clock_set_corepll
+                        0x4000'6edf     0x8c  Code  Gb  clock.o [1]
+sunxi_dma_enable_int    0x4000'5cc1     0x9c  Code  Gb  sunxi_dma.o [1]
+sunxi_dma_init          0x4000'5afd     0x8c  Code  Gb  sunxi_dma.o [1]
+sunxi_dma_install_int   0x4000'5c5d     0x64  Code  Gb  sunxi_dma.o [1]
+sunxi_dma_int_func      0x4000'5a65     0x98  Code  Lc  sunxi_dma.o [1]
+sunxi_dma_request       0x4000'5b89     0x3a  Code  Gb  sunxi_dma.o [1]
+sunxi_dma_setting       0x4000'5bc3     0x4a  Code  Gb  sunxi_dma.o [1]
+sunxi_dma_start         0x4000'5c0d     0x50  Code  Gb  sunxi_dma.o [1]
+sunxi_fastboot_exit     0x4000'6859     0x1a  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_init     0x4000'67f1     0x68  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_nonstandard_req_op
+                        0x4000'6903      0xc  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_normal_LangID
+                        0x4004'1d84      0x8  Data  Gb  usb_fastboot.o [1]
+sunxi_fastboot_reset    0x4000'6873      0xe  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_standard_req_op
+                        0x4000'689f     0x64  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_state_loop
+                        0x4000'690f     0x2e  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_usb_rx_dma_isr
+                        0x4000'6881     0x12  Code  Lc  usb_fastboot.o [1]
+sunxi_fastboot_usb_tx_dma_isr
+                        0x4000'6893      0xc  Code  Lc  usb_fastboot.o [1]
+sunxi_int_handlers      0x4005'2e24    0x4e8  Data  Gb  gic.o [1]
+sunxi_serial_init       0x4000'69cd     0xb0  Code  Gb  uart.o [1]
+sunxi_serial_test       0x4000'6c65     0x18  Code  Gb  uart.o [1]
+sunxi_ubuf              0x4005'393c     0x14  Data  Lc  usb_base_80.o [1]
+sunxi_udc_ep_reset      0x4000'365f      0x8  Code  Gb  usb_base_80.o [1]
+sunxi_udc_send_setup    0x4000'3667     0x58  Code  Gb  usb_base_80.o [1]
+sunxi_udc_set_address   0x4000'36c5     0x42  Code  Gb  usb_base_80.o [1]
+sunxi_udc_set_configuration
+                        0x4000'36bf      0x6  Code  Gb  usb_base_80.o [1]
+sunxi_udc_source        0x4005'38a4     0x2c  Data  Gb  usb_base_80.o [1]
+sunxi_udev_active       0x4005'3984      0x4  Data  Gb  usb_base_80.o [1]
+sunxi_usb_burn_from_boot_init
+                        0x4005'3990      0x4  Data  Gb  usb_base_80.o [1]
+sunxi_usb_ep0_buffer    0x4005'330c    0x200  Data  Lc  usb_base_80.o [1]
+sunxi_usb_exit          0x4000'31f9     0x6c  Code  Gb  usb_base_80.o [1]
+sunxi_usb_fastboot_dev  0x4004'1d8c     0x18  Data  Gb  usb_fastboot.o [1]
+sunxi_usb_fastboot_status
+                        0x4005'39ac      0x4  Data  Lc  usb_fastboot.o [1]
+sunxi_usb_fastboot_write_enable
+                        0x4005'39a8      0x4  Data  Lc  usb_fastboot.o [1]
+sunxi_usb_init          0x4000'2fe7    0x212  Code  Gb  usb_base_80.o [1]
+sunxi_usb_irq           0x4000'2e51    0x196  Code  Gb  usb_base_80.o [1]
+sunxi_usb_main_loop     0x4000'3c39     0xbe  Code  Gb  usb_base_80.o [1]
+sys_alloc               0x4000'063d    0x16e  Code  Lc  dlmalloc.o [2]
+sys_trim                0x4000'07ab     0x76  Code  Lc  dlmalloc.o [2]
+test_timer              0x4000'53d9     0x1c  Code  Gb  timer.o [1]
+timer0_func             0x4000'529b     0x24  Code  Gb  timer.o [1]
+timer1_func             0x4000'52bf     0x2c  Code  Gb  timer.o [1]
+timerX_callback_default
+                        0x4000'528d      0xe  Code  Lc  timer.o [1]
+timer_callback          0x4004'1d64     0x10  Data  Gb  timer.o [1]
+timer_for_usb           0x4005'3950     0x10  Data  Gb  timer.o [1]
+timer_init              0x4000'5221     0x36  Code  Gb  timer.o [1]
+timer_test_usbdc        0x4000'53cb      0xe  Code  Lc  timer.o [1]
+timer_used_status       0x4005'3974      0x4  Data  Lc  timer.o [1]
+tmalloc_large           0x4000'0821    0x384  Code  Lc  dlmalloc.o [2]
+tmalloc_small           0x4000'0ba5    0x1fe  Code  Lc  dlmalloc.o [2]
+trans_data              0x4005'38f0     0x1c  Data  Lc  usb_fastboot.o [1]
+ts_bit                  0x4004'1e30      0x4  Data  Gb  usbc_dev.o [1]
+uart_rev_buf            0x4004'1d74     0x10  Data  Gb  uart.o [1]
+uart_rx_dma_hd          0x4005'3980      0x4  Data  Lc  uart.o [1]
+uart_tx_dma_hd          0x4005'397c      0x4  Data  Lc  uart.o [1]
+usb_close_clock         0x4000'51cf     0x38  Code  Gb  usbc_resource.o [1]
+usb_dma_init            0x4000'4443      0xa  Code  Gb  usb_dma_control.o [1]
+usb_dma_int_clear       0x4000'4509      0xc  Code  Gb  usb_dma_control.o [1]
+usb_dma_int_query       0x4000'44fb      0xe  Code  Gb  usb_dma_control.o [1]
+usb_dma_release         0x4000'446f     0x20  Code  Gb  usb_dma_control.o [1]
+usb_dma_request         0x4000'444d     0x22  Code  Gb  usb_dma_control.o [1]
+usb_dma_set_pktlen      0x4000'44b7     0x24  Code  Gb  usb_dma_control.o [1]
+usb_dma_setting         0x4000'448f     0x28  Code  Gb  usb_dma_control.o [1]
+usb_dma_stop            0x4000'44db     0x20  Code  Gb  usb_dma_control.o [1]
+usb_dma_trans_unaliged_bytes
+                        0x4005'3988      0x4  Data  Lc  usb_base_80.o [1]
+usb_dma_trans_unaligned_buf
+                        0x4005'398c      0x4  Data  Lc  usb_base_80.o [1]
+usb_dma_used            0x4005'38d0     0x20  Data  Lc  usb_dma_control.o [1]
+usb_hd                  0x4005'39a4      0x4  Data  Lc  usb_dma_control.o [1]
+usb_open_clock          0x4000'5169     0x66  Code  Gb  usbc_resource.o [1]
+usbc_base_address       0x4004'1e24      0xc  Data  Lc  usbc.o [1]
+usbc_info_g             0x4005'390c     0x18  Data  Lc  usbc.o [1]
+usbc_otg_array          0x4005'3764     0x80  Data  Lc  usbc.o [1]
+v7_clean_inval_dcache_level_setway
+                        0x4000'5dd9     0x38  Code  Lc  cache_v7.o [1]
+v7_dcache_clean_inval_range
+                        0x4000'5ed1     0x14  Code  Lc  cache_v7.o [1]
+v7_dcache_inval_range   0x4000'5ee5     0x48  Code  Lc  cache_v7.o [1]
+v7_dcache_inval_range::__func__
+                        0x4000'79ec     0x18  Data  Lc  cache_v7.o [1]
+v7_dcache_maint_range   0x4000'5f39     0x48  Code  Lc  cache_v7.o [1]
+v7_inval_dcache_level_setway
+                        0x4000'5da1     0x38  Code  Lc  cache_v7.o [1]
+v7_inval_tlb            0x4000'5f81     0x20  Code  Lc  cache_v7.o [1]
+v7_maint_dcache_all     0x4000'5e93     0x3c  Code  Lc  cache_v7.o [1]
+v7_maint_dcache_level_setway
+                        0x4000'5e2f     0x64  Code  Lc  cache_v7.o [1]
+
+
+[1] = F:\H3_wk\H3\H3_git\EWARM\H3\Obj
+[2] = dl7Sx_tlf.a
+[3] = m7Sx_tlv.a
+[4] = rt7Sx_tl.a
+[5] = sh7Sxs_l.a
+
+   29 355 bytes of readonly  code memory
+    3 379 bytes of readonly  data memory
+  121 029 bytes of readwrite data memory (+ 48 absolute)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sessionSetup><partner><name>Master</name><workspace>$WS_PATH$</workspace><project>$PROJ_PATH$</project><config>H3</config><numberOfCores>4</numberOfCores><port>53461</port></partner><partner><name>Slave</name><workspace/><project/><config/><numberOfCores>1</numberOfCores><port>53461</port><attachToRunningTarget>false</attachToRunningTarget></partner></sessionSetup>

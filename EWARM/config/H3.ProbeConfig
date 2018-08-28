@@ -1,0 +1,10 @@
+; Raspberry Pi 2 Broadcom 2836
+; "A7_0" "Cortex-A7:0@0x80010000"
+;+"A7_1" "Cortex-A7:0@0x80012000"
+;+"A7_2" "Cortex-A7:0@0x80014000"
+;+"A7_3" "Cortex-A7:0@0x80016000"
+
+"A7_0" "Cortex-A7:0@0x80110000"
++"A7_1" "Cortex-A7:0@0x80112000"
++"A7_2" "Cortex-A7:0@0x80114000"
++"A7_3" "Cortex-A7:0@0x80116000"
